@@ -24,6 +24,7 @@ public class BaseClass {
 	{
 		
 		config=new ConfigDataProvider();
+		
 	}
 	
 	
