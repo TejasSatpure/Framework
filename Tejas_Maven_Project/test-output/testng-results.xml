@@ -2,35 +2,35 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-23T15:14:29Z" name="Default suite" finished-at="2023-07-23T15:14:39Z" duration-ms="9443">
+  <suite started-at="2023-07-24T17:54:41Z" name="Default suite" finished-at="2023-07-24T17:54:52Z" duration-ms="10991">
     <groups>
     </groups>
-    <test started-at="2023-07-23T15:14:29Z" name="Default test" finished-at="2023-07-23T15:14:39Z" duration-ms="9443">
+    <test started-at="2023-07-24T17:54:41Z" name="Default test" finished-at="2023-07-24T17:54:52Z" duration-ms="10991">
       <class name="Test.LoginTest">
-        <test-method is-config="true" signature="getTestData()[pri:0, instance:Test.LoginTest@babafc2]" started-at="2023-07-23T20:44:29Z" name="getTestData" finished-at="2023-07-23T20:44:29Z" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="getTestData()[pri:0, instance:Test.LoginTest@73d983ea]" started-at="2023-07-24T23:24:40Z" name="getTestData" finished-at="2023-07-24T23:24:41Z" duration-ms="205" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getTestData -->
-        <test-method is-config="true" signature="startApplication()[pri:0, instance:Test.LoginTest@babafc2]" started-at="2023-07-23T20:44:29Z" name="startApplication" finished-at="2023-07-23T20:44:34Z" duration-ms="5156" status="PASS">
+        <test-method is-config="true" signature="startApplication()[pri:0, instance:Test.LoginTest@73d983ea]" started-at="2023-07-24T23:24:41Z" name="startApplication" finished-at="2023-07-24T23:24:47Z" duration-ms="6502" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startApplication -->
-        <test-method signature="TestCase1()[pri:0, instance:Test.LoginTest@babafc2]" started-at="2023-07-23T20:44:34Z" name="TestCase1" finished-at="2023-07-23T20:44:36Z" duration-ms="1676" status="PASS">
+        <test-method signature="TestCase1()[pri:0, instance:Test.LoginTest@73d983ea]" started-at="2023-07-24T23:24:47Z" name="TestCase1" finished-at="2023-07-24T23:24:49Z" duration-ms="1880" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCase1 -->
-        <test-method is-config="true" signature="TakeScreenshot(org.testng.ITestResult)[pri:0, instance:Test.LoginTest@babafc2]" started-at="2023-07-23T20:44:36Z" name="TakeScreenshot" finished-at="2023-07-23T20:44:36Z" duration-ms="437" status="PASS">
+        <test-method is-config="true" signature="TakeScreenshot(org.testng.ITestResult)[pri:0, instance:Test.LoginTest@73d983ea]" started-at="2023-07-24T23:24:49Z" name="TakeScreenshot" finished-at="2023-07-24T23:24:49Z" duration-ms="380" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=TestCase1 status=SUCCESS method=LoginTest.TestCase1()[pri:0, instance:Test.LoginTest@babafc2] output={null}]]]>
+                <![CDATA[[TestResult name=TestCase1 status=SUCCESS method=LoginTest.TestCase1()[pri:0, instance:Test.LoginTest@73d983ea] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TakeScreenshot -->
-        <test-method is-config="true" signature="tearDownApplication()[pri:0, instance:Test.LoginTest@babafc2]" started-at="2023-07-23T20:44:36Z" name="tearDownApplication" finished-at="2023-07-23T20:44:39Z" duration-ms="2165" status="PASS">
+        <test-method is-config="true" signature="tearDownApplication()[pri:0, instance:Test.LoginTest@73d983ea]" started-at="2023-07-24T23:24:49Z" name="tearDownApplication" finished-at="2023-07-24T23:24:52Z" duration-ms="2216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownApplication -->

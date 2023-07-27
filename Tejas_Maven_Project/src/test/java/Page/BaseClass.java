@@ -1,5 +1,7 @@
 package Page;
 
+import java.io.File;
+
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
@@ -9,15 +11,27 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+//import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import Utility.ConfigDataProvider;
 import Utility.StartBrowser;
-import lombok.experimental.Helper;
+//import lombok.experimental.Helper;
 
 public class BaseClass {
 	
+	
 	public WebDriver driver;
 	public ConfigDataProvider config;
+	//public ExtentReports report;
+	//public ExtentTest logger;
+	
+	
+	
+	String ReportPath= System.getProperty("user.dir")+"/Reports/login.html";
 	
 	@BeforeSuite
 	public void getTestData() throws IOException
@@ -25,14 +39,24 @@ public class BaseClass {
 		
 		config=new ConfigDataProvider();
 		
+		//ExtentHtmlReporter extent= new ExtentHtmlReporter(new File(ReportPath));
+		//report=new ExtentReports();
+		//report.attachReporter(extent);
+		//System.out.println();
+		
+		
+		//Need to add aventstack dependicy in POM.xml for extent reporter
+		
 	}
 	
 	
 	@BeforeClass
-	public void startApplication()
+	public void startApplication()  
 	{
 	
-		 driver=StartBrowser.SetUpBrowser(driver,config.geturl(), config.browser());
+		 driver=StartBrowser.SetUpBrowser(driver,config.geturl(), config.browser());  //Getting URl and Browser from Config file
+		
+		
 		
 	}
 	
@@ -44,13 +68,22 @@ public class BaseClass {
 	}
 	
 	@AfterMethod
-	public void TakeScreenshot(ITestResult result) throws IOException
+	public String TakeScreenshot(ITestResult result) throws IOException
 	{
-	   if(result.getStatus()==ITestResult.SUCCESS)
+		Utility.Helper help= new Utility.Helper();
+		
+		
+		if(result.getStatus()==ITestResult.SUCCESS)
 	   {
-	         Utility.Helper help= new Utility.Helper();
+	         
 	         help.CaptureScreensot(driver);
+	        
+	       
 	   }
+	   
+		String Date1=help.getdate();
+		return Date1;
+	    
 	}
 	
 	

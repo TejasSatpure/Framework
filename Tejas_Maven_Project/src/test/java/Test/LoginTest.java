@@ -18,8 +18,10 @@ public class LoginTest extends BaseClass {
 	public void TestCase1() throws InterruptedException
 	{
 		
-		LoginPage Lpage=new LoginPage(driver);
+		LoginPage Lpage=new LoginPage(driver);		
 		Lpage.LoginToApplication(config.uname(), config.pass());
+		
+		
 		
 			
 		

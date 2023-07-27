@@ -3,10 +3,14 @@
 <suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test parallel="none" name="Default test(failed)">
     <classes>
+      <class name="Page.BaseClass">
+        <methods>
+          <include name="getTestData"/>
+        </methods>
+      </class> <!-- Page.BaseClass -->
       <class name="Test.LoginTest">
         <methods>
           <include name="TestCase1"/>
-          <include name="getTestData"/>
           <include name="startApplication"/>
         </methods>
       </class> <!-- Test.LoginTest -->

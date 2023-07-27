@@ -17,13 +17,13 @@ public class Helper {
 	{
 		
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File dest= new File("./ScreenShot/Login"+getdata()+".png");
+		File dest= new File("./ScreenShot/Login"+getdate()+".png");
 				
 		FileHandler.copy(src, dest);
 	}
 	
 	
-	public String getdata()
+	public String getdate()
 	{
 		SimpleDateFormat CustomFormat = new SimpleDateFormat("MM_dd_yy_HH_mm_ss");
 		Date currentDate= new Date();
