@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "1b55ce29-627b-4e45-89a3-117330610b6a",
+		"name": "WeatherAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Verify Latitude and Longitude",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response JSON\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"// Assert latitude and longitude\r",
+							"pm.test(\"Latitude should be 51.51\", function () {\r",
+							"    pm.expect(jsonData.coord.lat).to.eql(51.51);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Longitude should be -0.13\", function () {\r",
+							"    pm.expect(jsonData.coord.lon).to.eql(-0.13);\r",
+							"});\r",
+							"\r",
+							"// Assert status, base, and visibility\r",
+							"pm.test(\"Status should be 200\", function () {\r",
+							"    pm.expect(jsonData.cod).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Base should be 'stations'\", function () {\r",
+							"    pm.expect(jsonData.base).to.eql('stations');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Visibility should be 10000\", function () {\r",
+							"    pm.expect(jsonData.visibility).to.eql(10000);\r",
+							"});\r",
+							"\r",
+							"// Assert weather attributes\r",
+							"pm.test(\"Weather ID should be 300\", function () {\r",
+							"    pm.expect(jsonData.weather[0].id).to.eql(300);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Weather main should be 'Drizzle'\", function () {\r",
+							"    pm.expect(jsonData.weather[0].main).to.eql('Drizzle');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Weather description should be 'light intensity drizzle'\", function () {\r",
+							"    pm.expect(jsonData.weather[0].description).to.eql('light intensity drizzle');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22.",
+					"protocol": "https",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "b6 907d289e10d714a6e88b30761fae22."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Station and Status Code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response JSON\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"\r",
+							"// Assert status, base, and visibility\r",
+							"pm.test(\"Status should be 200\", function () {\r",
+							"    pm.expect(jsonData.cod).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Base should be 'stations'\", function () {\r",
+							"    pm.expect(jsonData.base).to.eql('stations');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22.",
+					"protocol": "https",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "b6 907d289e10d714a6e88b30761fae22."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Visibility",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response JSON\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"\r",
+							"// Assert status, base, and visibility\r",
+							"pm.test(\"Status should be 200\", function () {\r",
+							"    pm.expect(jsonData.cod).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Visibility should be 10000\", function () {\r",
+							"    pm.expect(jsonData.visibility).to.eql(10000);\r",
+							"});\r",
+							"\r",
+							"// Assert weather attributes\r",
+							"pm.test(\"Weather ID should be 300\", function () {\r",
+							"    pm.expect(jsonData.weather[0].id).to.eql(300);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Weather main should be 'Drizzle'\", function () {\r",
+							"    pm.expect(jsonData.weather[0].main).to.eql('Drizzle');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Weather description should be 'light intensity drizzle'\", function () {\r",
+							"    pm.expect(jsonData.weather[0].description).to.eql('light intensity drizzle');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22.",
+					"protocol": "https",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "b6 907d289e10d714a6e88b30761fae22."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Weather and Response Time",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response JSON\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"\r",
+							"// Assert status, base, and visibility\r",
+							"pm.test(\"Status should be 200\", function () {\r",
+							"    pm.expect(jsonData.cod).to.eql(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Visibility should be 10000\", function () {\r",
+							"    pm.expect(jsonData.visibility).to.eql(10000);\r",
+							"});\r",
+							"\r",
+							"// Assert weather attributes\r",
+							"pm.test(\"Weather ID should be 300\", function () {\r",
+							"    pm.expect(jsonData.weather[0].id).to.eql(300);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Weather main should be 'Drizzle'\", function () {\r",
+							"    pm.expect(jsonData.weather[0].main).to.eql('Drizzle');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Weather description should be 'light intensity drizzle'\", function () {\r",
+							"    pm.expect(jsonData.weather[0].description).to.eql('light intensity drizzle');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6 907d289e10d714a6e88b30761fae22.",
+					"protocol": "https",
+					"host": [
+						"samples",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "b6 907d289e10d714a6e88b30761fae22."
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
